@@ -244,6 +244,16 @@
         "runtime": {
           "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {}
         }
+      },
+      "WiPro.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/WiPro.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WiPro.Domain.dll": {}
+        }
       }
     }
   },
@@ -775,13 +785,20 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "WiPro.Domain/1.0.0": {
+      "type": "project",
+      "path": "../WiPro.Domain/WiPro.Domain.csproj",
+      "msbuildProject": "../WiPro.Domain/WiPro.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Microsoft.EntityFrameworkCore >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.8",
       "Microsoft.EntityFrameworkCore.InMemory >= 5.0.8",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.8"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.8",
+      "WiPro.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -812,7 +829,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Domain/WiPro.Domain.csproj": {
+              "projectPath": "/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Domain/WiPro.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -825,6 +846,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.8, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "target": "Package",
             "version": "[5.0.8, )"

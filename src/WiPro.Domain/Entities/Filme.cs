@@ -9,5 +9,7 @@ namespace WiPro.Domain.Entities
         public Guid ClienteId { get; set; }
         public Cliente Cliente { get; set; }
         public bool Disponivel { get; set; }
+        public Guid LocacaoId { get; set; }
+        public Locacao Locacao { get; set; }
     }
 }

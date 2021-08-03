@@ -1,0 +1,12 @@
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/bin/Debug/net5.0/WiPro.CrossCutting.deps.json
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/bin/Debug/net5.0/WiPro.CrossCutting.dll
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/bin/Debug/net5.0/ref/WiPro.CrossCutting.dll
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/bin/Debug/net5.0/WiPro.CrossCutting.pdb
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/WiPro.CrossCutting.csproj.AssemblyReference.cache
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/WiPro.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/WiPro.CrossCutting.AssemblyInfoInputs.cache
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/WiPro.CrossCutting.AssemblyInfo.cs
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/WiPro.CrossCutting.csproj.CoreCompileInputs.cache
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/WiPro.CrossCutting.dll
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/ref/WiPro.CrossCutting.dll
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/WiPro.CrossCutting.pdb

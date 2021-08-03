@@ -16,6 +16,8 @@ namespace WiPro.Data.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Cliente>(new ClienteMap().Configure);
+            modelBuilder.Entity<Filme>(new FilmeMap().Configure);
+            modelBuilder.Entity<Locacao>(new LocacaoMap().Configure);
         }
     }
 }

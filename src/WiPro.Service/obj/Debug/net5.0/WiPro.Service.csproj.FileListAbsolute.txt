@@ -1,0 +1,12 @@
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/bin/Debug/net5.0/WiPro.Service.deps.json
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/bin/Debug/net5.0/WiPro.Service.dll
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/bin/Debug/net5.0/ref/WiPro.Service.dll
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/bin/Debug/net5.0/WiPro.Service.pdb
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/obj/Debug/net5.0/WiPro.Service.csproj.AssemblyReference.cache
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/obj/Debug/net5.0/WiPro.Service.GeneratedMSBuildEditorConfig.editorconfig
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/obj/Debug/net5.0/WiPro.Service.AssemblyInfoInputs.cache
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/obj/Debug/net5.0/WiPro.Service.AssemblyInfo.cs
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/obj/Debug/net5.0/WiPro.Service.csproj.CoreCompileInputs.cache
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/obj/Debug/net5.0/WiPro.Service.dll
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/obj/Debug/net5.0/ref/WiPro.Service.dll
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Service/obj/Debug/net5.0/WiPro.Service.pdb

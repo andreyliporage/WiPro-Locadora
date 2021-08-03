@@ -1,0 +1,7 @@
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Api/obj/Debug/net5.0/WiPro.Api.csproj.AssemblyReference.cache
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Api/obj/Debug/net5.0/WiPro.Api.GeneratedMSBuildEditorConfig.editorconfig
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Api/obj/Debug/net5.0/WiPro.Api.AssemblyInfoInputs.cache
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Api/obj/Debug/net5.0/WiPro.Api.AssemblyInfo.cs
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Api/obj/Debug/net5.0/WiPro.Api.csproj.CoreCompileInputs.cache
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Api/obj/Debug/net5.0/WiPro.Api.MvcApplicationPartsAssemblyInfo.cs
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Api/obj/Debug/net5.0/WiPro.Api.MvcApplicationPartsAssemblyInfo.cache

@@ -322,6 +322,11 @@
       "WiPro.CrossCutting/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "WiPro.Data": "1.0.0",
+          "WiPro.Domain": "1.0.0",
+          "WiPro.Service": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/WiPro.CrossCutting.dll": {}
         },

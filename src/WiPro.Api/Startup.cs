@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using WiPro.CrossCutting.DependencyInjection;
 using WiPro.Data.Context;
 
 namespace WiPro.Api
@@ -22,10 +23,7 @@ namespace WiPro.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<WiProContext>(opt =>
-            {
-                opt.UseInMemoryDatabase(databaseName: "MockDb");
-            });
+            ConfigureRepository.ConfigureDependeciesRepository(services);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WiPro.Api", Version = "v1" });

@@ -36,14 +36,14 @@ namespace WiPro.Data.Repository
 
         public async Task<Filme> GetFilme(Guid id)
         {
-            IQueryable<Filme> query = _context.Filmes.Include(f => f.Locacao).Where(f => f.Id == id);
+            IQueryable<Filme> query = _context.Filmes.Where(f => f.Id == id);
 
             return await query.FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<Filme>> GetFilmes()
         {
-            IQueryable<Filme> query = _context.Filmes.Include(f => f.Locacao);
+            IQueryable<Filme> query = _context.Filmes;
 
             return await query.ToListAsync();
         }

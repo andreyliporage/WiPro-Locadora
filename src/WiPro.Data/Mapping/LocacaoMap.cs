@@ -12,10 +12,6 @@ namespace WiPro.Data.Mapping
 
             builder.HasKey(l => l.Id);
 
-            builder.Property(l => l.Cliente).IsRequired();
-
-            builder.Property(l => l.Filmes).IsRequired();
-
             builder.Property(l => l.DiaLocao).IsRequired();
 
             builder.Property(l => l.Devolucao).IsRequired();

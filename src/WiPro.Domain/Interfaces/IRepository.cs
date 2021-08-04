@@ -10,6 +10,7 @@ namespace WiPro.Domain.Interfaces
         Task<T> InsertAsync(T entity);
         Task<IEnumerable<Cliente>> GetClientes();
         Task<Cliente> GetCliente(Guid id);
+        Task<Cliente> GetCliente(string cpf);
         Task<Filme> GetFilme(Guid id);
         Task<IEnumerable<Filme>> GetFilmes();
         Task<Locacao> GetLocacao(Guid id);

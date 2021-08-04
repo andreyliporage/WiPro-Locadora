@@ -27,6 +27,13 @@ namespace WiPro.Data.Repository
             return await query.FirstOrDefaultAsync();
         }
 
+        public async Task<Cliente> GetCliente(string cpf)
+        {
+            IQueryable<Cliente> query = _context.Clientes.Where(c => c.CPF == cpf);
+
+            return await query.FirstOrDefaultAsync();
+        }
+
         public async Task<IEnumerable<Cliente>> GetClientes()
         {
             IQueryable<Cliente> query = _context.Clientes.Include(c => c.Locacao);
@@ -78,10 +85,23 @@ namespace WiPro.Data.Repository
 
         public async Task<Cliente> InsertCliente(Cliente cliente)
         {
-
-            cliente.Id = Guid.NewGuid();
-            _context.Add(cliente);
-            await _context.SaveChangesAsync();
+            try
+            {
+                if (!await _context.Clientes.AnyAsync(c => c.CPF == cliente.CPF))
+                {
+                    cliente.Id = Guid.NewGuid();
+                    _context.Add(cliente);
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    throw new Exception("Cliente já cadastrado");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
             return cliente;
         }

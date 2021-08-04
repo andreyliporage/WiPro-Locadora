@@ -1,3 +1,5 @@
+using System;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WiPro.Domain.Entities;
@@ -25,7 +27,14 @@ namespace WiPro.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Post(Cliente cliente)
         {
-            return Ok(await _service.Post(cliente));
+            try
+            {
+                return Ok(await _service.Post(cliente));
+            }
+            catch (Exception)
+            {
+                return StatusCode((int)HttpStatusCode.BadRequest, "Cliente já cadastrado");
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace WiPro.Data.Repository
 
         public async Task<IEnumerable<Cliente>> GetClientes()
         {
-            IQueryable<Cliente> query = _context.Clientes;
+            IQueryable<Cliente> query = _context.Clientes.Include(c => c.Locacao);
 
             return await query.ToListAsync();
         }

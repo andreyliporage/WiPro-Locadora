@@ -8,6 +8,7 @@ namespace WiPro.Domain.Entities
     {
         public Locacao()
         {
+            Filmes = new HashSet<Filme>();
             DiaLocao = DateTime.UtcNow;
             Devolucao = DiaLocao.AddDays(3);
         }

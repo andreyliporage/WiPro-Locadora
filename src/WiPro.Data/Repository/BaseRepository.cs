@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WiPro.Data.Context;
@@ -17,6 +18,41 @@ namespace WiPro.Data.Repository
         {
             _context = context;
             _dataset = context.Set<T>();
+        }
+
+        public async Task<Cliente> GetCliente(Guid id)
+        {
+            IQueryable<Cliente> query = _context.Clientes.Include(c => c.Locacao).Where(c => c.Id == id);
+
+            return await query.FirstOrDefaultAsync();
+        }
+
+        public async Task<IEnumerable<Cliente>> GetClientes()
+        {
+            IQueryable<Cliente> query = _context.Clientes;
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<Filme> GetFilme(Guid id)
+        {
+            IQueryable<Filme> query = _context.Filmes.Include(f => f.Locacao).Where(f => f.Id == id);
+
+            return await query.FirstOrDefaultAsync();
+        }
+
+        public async Task<IEnumerable<Filme>> GetFilmes()
+        {
+            IQueryable<Filme> query = _context.Filmes.Include(f => f.Locacao);
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<Locacao> GetLocacao(Guid id)
+        {
+            IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filmes);
+
+            return await query.FirstOrDefaultAsync();
         }
 
         public async Task<T> InsertAsync(T entity)
@@ -40,47 +76,14 @@ namespace WiPro.Data.Repository
             return entity;
         }
 
-        public async Task<T> SelectAsync(Guid id)
+        public async Task<Cliente> InsertCliente(Cliente cliente)
         {
-            try
-            {
-                return await _dataset.SingleOrDefaultAsync(e => e.Id.Equals(id));
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
 
-        public async Task<IEnumerable<T>> SelectAsync()
-        {
-            try
-            {
-                return await _dataset.ToListAsync();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+            cliente.Id = Guid.NewGuid();
+            _context.Add(cliente);
+            await _context.SaveChangesAsync();
 
-        public async Task<T> UpdateAsync(T entity)
-        {
-            try
-            {
-                var result = await _dataset.SingleOrDefaultAsync(x => x.Id.Equals(entity.Id));
-                if (result == null) return null;
-
-                _context.Entry(result).CurrentValues.SetValues(entity);
-                await _context.SaveChangesAsync();
-            }
-            catch (System.Exception)
-            {
-
-                throw;
-            }
-
-            return entity;
+            return cliente;
         }
     }
 }

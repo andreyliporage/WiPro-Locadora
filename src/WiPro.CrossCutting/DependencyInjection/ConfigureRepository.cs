@@ -10,7 +10,7 @@ namespace WiPro.CrossCutting.DependencyInjection
     {
         public static void ConfigureDependeciesRepository(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
+            serviceCollection.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
             serviceCollection.AddDbContext<WiProContext>(opt => opt.UseInMemoryDatabase(databaseName: "MockDb"));
         }
     }

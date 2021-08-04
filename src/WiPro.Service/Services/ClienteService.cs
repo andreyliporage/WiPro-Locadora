@@ -17,17 +17,17 @@ namespace WiPro.Service.Services
 
         public async Task<Cliente> Get(Guid id)
         {
-            return await _repository.SelectAsync(id);
+            return await _repository.GetCliente(id);
         }
 
         public async Task<IEnumerable<Cliente>> GetAll()
         {
-            return await _repository.SelectAsync();
+            return await _repository.GetClientes();
         }
 
         public async Task<Cliente> Post(Cliente cliente)
         {
-            return await _repository.InsertAsync(cliente);
+            return await _repository.InsertCliente(cliente);
         }
     }
 }

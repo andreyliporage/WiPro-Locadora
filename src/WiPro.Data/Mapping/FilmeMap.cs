@@ -19,8 +19,6 @@ namespace WiPro.Data.Mapping
             builder.Property(f => f.Genero).IsRequired().HasMaxLength(10);
 
             builder.Property(f => f.Disponivel).IsRequired();
-
-            builder.HasOne(f => f.Cliente).WithMany(c => c.Filmes).HasForeignKey(c => c.ClienteId);
         }
     }
 }

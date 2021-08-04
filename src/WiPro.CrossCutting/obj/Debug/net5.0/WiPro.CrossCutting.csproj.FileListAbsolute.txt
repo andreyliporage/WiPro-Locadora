@@ -10,3 +10,10 @@
 /home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/WiPro.CrossCutting.dll
 /home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/ref/WiPro.CrossCutting.dll
 /home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/WiPro.CrossCutting.pdb
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/bin/Debug/net5.0/WiPro.Data.dll
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/bin/Debug/net5.0/WiPro.Domain.dll
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/bin/Debug/net5.0/WiPro.Service.dll
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/bin/Debug/net5.0/WiPro.Domain.pdb
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/bin/Debug/net5.0/WiPro.Service.pdb
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/bin/Debug/net5.0/WiPro.Data.pdb
+/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.CrossCutting/obj/Debug/net5.0/WiPro.CrossCutting.csproj.CopyComplete

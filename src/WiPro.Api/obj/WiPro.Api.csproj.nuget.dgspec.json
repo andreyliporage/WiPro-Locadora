@@ -302,7 +302,14 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Data/WiPro.Data.csproj": {
+                "projectPath": "/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Data/WiPro.Data.csproj"
+              },
+              "/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Domain/WiPro.Domain.csproj": {
+                "projectPath": "/home/andreyliporage/Documentos/dev/WiPro-Locadora/src/WiPro.Domain/WiPro.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

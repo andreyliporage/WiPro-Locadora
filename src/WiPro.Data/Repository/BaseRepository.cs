@@ -75,10 +75,12 @@ namespace WiPro.Data.Repository
 
             for (int i = 0; i < locacao.Filmes.Count(); i++)
             {
-                if (!FilmeDisponivel(locacao.Filmes.ElementAt(i)))
+                var filmes = locacao.Filmes.ToList();
+                var filme = await _context.Filmes.FirstOrDefaultAsync(f => f.Id == filmes[i].Id);
+
+                if (!filme.Disponivel)
                 {
-                    filmeIndisponivelList.Add(locacao.Filmes.ElementAt(i));
-                    locacao.Filmes.ToList().Remove(locacao.Filmes.ElementAt(i));
+                    throw new Exception($"O filme {filme.Nome} não está disponível");
                 }
             }
 

@@ -18,6 +18,12 @@ namespace WiPro.Api.Controllers
             _service = service;
         }
 
+        [HttpGet("{id}", Name = "GetWithId")]
+        public async Task<ActionResult> Get(Guid id)
+        {
+            return Ok(await _service.Get(id));
+        }
+
         [HttpGet]
         public async Task<ActionResult> Get()
         {
@@ -29,7 +35,8 @@ namespace WiPro.Api.Controllers
         {
             try
             {
-                return Ok(await _service.Post(cliente));
+                var result = await _service.Post(cliente);
+                return Created(new Uri(Url.Link("GetWithId", new { id = result.Id })), result);
             }
             catch (Exception)
             {

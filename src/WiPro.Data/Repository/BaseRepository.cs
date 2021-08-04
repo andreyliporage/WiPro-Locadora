@@ -24,49 +24,49 @@ namespace WiPro.Data.Repository
         {
             IQueryable<Cliente> query = _context.Clientes.Include(c => c.Locacao).Where(c => c.Id == id);
 
-            return await query.FirstOrDefaultAsync();
+            return await query.AsNoTracking().FirstOrDefaultAsync();
         }
 
         public async Task<Cliente> GetCliente(string cpf)
         {
             IQueryable<Cliente> query = _context.Clientes.Where(c => c.CPF == cpf);
 
-            return await query.FirstOrDefaultAsync();
+            return await query.AsNoTracking().FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<Cliente>> GetClientes()
         {
             IQueryable<Cliente> query = _context.Clientes.Include(c => c.Locacao);
 
-            return await query.ToListAsync();
+            return await query.AsNoTracking().ToListAsync();
         }
 
         public async Task<Filme> GetFilme(Guid id)
         {
             IQueryable<Filme> query = _context.Filmes.Where(f => f.Id == id);
 
-            return await query.FirstOrDefaultAsync();
+            return await query.AsNoTracking().FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<Filme>> GetFilmes()
         {
             IQueryable<Filme> query = _context.Filmes;
 
-            return await query.ToListAsync();
+            return await query.AsNoTracking().ToListAsync();
         }
 
         public async Task<Locacao> GetLocacao(Guid id)
         {
             IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filmes);
 
-            return await query.FirstOrDefaultAsync();
+            return await query.AsNoTracking().FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<Locacao>> GetLocacao()
         {
             IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filmes);
 
-            return await query.ToListAsync();
+            return await query.AsNoTracking().ToListAsync();
         }
 
         public async Task<Locacao> PostLocacao(Locacao locacao)
@@ -76,7 +76,7 @@ namespace WiPro.Data.Repository
             for (int i = 0; i < locacao.Filmes.Count(); i++)
             {
                 var filmes = locacao.Filmes.ToList();
-                var filme = await _context.Filmes.FirstOrDefaultAsync(f => f.Id == filmes[i].Id);
+                var filme = await _context.Filmes.AsNoTracking().FirstOrDefaultAsync(f => f.Id == filmes[i].Id);
 
                 if (!filme.Disponivel)
                 {
@@ -116,7 +116,7 @@ namespace WiPro.Data.Repository
         {
             try
             {
-                if (!await _context.Clientes.AnyAsync(c => c.CPF == cliente.CPF))
+                if (!await _context.Clientes.AsNoTracking().AnyAsync(c => c.CPF == cliente.CPF))
                 {
                     cliente.Id = Guid.NewGuid();
                     _context.Add(cliente);

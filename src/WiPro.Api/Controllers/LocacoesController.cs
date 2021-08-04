@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WiPro.Domain.DTOs;
 using WiPro.Domain.Entities;
 using WiPro.Domain.Interfaces;
 
@@ -31,11 +32,11 @@ namespace WiPro.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] Locacao locacao)
+        public async Task<ActionResult> Post([FromBody] LocacaoDTO locacaoDTO)
         {
             try
             {
-                var result = await _service.Post(locacao);
+                var result = await _service.Post(locacaoDTO);
                 return Created(new Uri(Url.Link("GetLocacaoWithId", new { id = result.Id })), result);
             }
             catch (Exception e)

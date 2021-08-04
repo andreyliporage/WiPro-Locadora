@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using WiPro.Domain.DTOs;
 using WiPro.Domain.Entities;
 using WiPro.Domain.Interfaces;
 
@@ -25,9 +26,9 @@ namespace WiPro.Service.Services
             return await _repository.GetLocacao();
         }
 
-        public async Task<Locacao> Post(Locacao locacao)
+        public async Task<Locacao> Post(LocacaoDTO locacaoDTO)
         {
-            return await _repository.PostLocacao(locacao);
+            return await _repository.PostLocacao(locacaoDTO);
         }
     }
 }

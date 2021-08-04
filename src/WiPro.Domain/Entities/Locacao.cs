@@ -16,7 +16,7 @@ namespace WiPro.Domain.Entities
 
         [JsonIgnore]
         public Cliente Cliente { get; set; }
-        public Filme Filme { get; set; }
+        public IEnumerable<Filme> Filmes { get; set; }
         public DateTime DiaLocao { get; set; }
         public DateTime Devolucao { get; set; }
     }

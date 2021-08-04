@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using WiPro.Domain.DTOs;
 using WiPro.Domain.Entities;
 
 namespace WiPro.Domain.Interfaces
@@ -9,6 +10,6 @@ namespace WiPro.Domain.Interfaces
     {
         Task<Locacao> Get(Guid id);
         Task<IEnumerable<Locacao>> GetAll();
-        Task<Locacao> Post(Locacao locacao);
+        Task<Locacao> Post(LocacaoDTO locacaoDTO);
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WiPro.Data.Context;
+using WiPro.Domain.DTOs;
 using WiPro.Domain.Entities;
 using WiPro.Domain.Interfaces;
 
@@ -57,21 +58,53 @@ namespace WiPro.Data.Repository
 
         public async Task<Locacao> GetLocacao(Guid id)
         {
-            IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filme);
+            IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filmes);
 
             return await query.AsNoTracking().FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<Locacao>> GetLocacao()
         {
-            IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filme);
+            IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filmes);
 
             return await query.AsNoTracking().ToListAsync();
         }
 
-        public async Task<Locacao> PostLocacao(Locacao locacao)
+        public async Task<Locacao> PostLocacao(LocacaoDTO locacaoDTO)
         {
-            return null;
+            var locacao = new Locacao();
+            try
+            {
+                var cliente = await _context.Clientes.FirstOrDefaultAsync(c => c.Id == locacaoDTO.ClienteId);
+                if (cliente == null) throw new Exception("Cliente não cadastrado");
+
+                var filmes = new List<Filme>();
+
+                for (int i = 0; i < locacaoDTO.FilmesIds.Count(); i++)
+                {
+                    var filmesIds = locacaoDTO.FilmesIds.ToList();
+                    var filme = await _context.Filmes.FirstOrDefaultAsync(f => f.Id == filmesIds[i]);
+
+                    if (filme == null) throw new Exception("Filme não cadastrado");
+
+                    filmes.Add(filme);
+                }
+
+
+                locacao.Id = Guid.NewGuid();
+                locacao.Cliente = cliente;
+                locacao.ClienteId = cliente.Id;
+                locacao.Filmes = filmes;
+
+                _context.Add(locacao);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return locacao;
         }
 
         public async Task<T> InsertAsync(T entity)

@@ -18,7 +18,7 @@ namespace WiPro.Data.Mapping
 
             builder.HasOne(l => l.Cliente).WithOne(c => c.Locacao).HasForeignKey<Cliente>(c => c.LocacaoId);
 
-            builder.HasOne(l => l.Filme).WithOne(f => f.Locacao).HasForeignKey<Filme>(f => f.LocacaoId);
+            builder.HasMany(l => l.Filmes).WithOne(f => f.Locacao).HasForeignKey(f => f.LocacaoId);
         }
     }
 }

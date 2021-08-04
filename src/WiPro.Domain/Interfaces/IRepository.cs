@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using WiPro.Domain.DTOs;
 using WiPro.Domain.Entities;
 
 namespace WiPro.Domain.Interfaces
@@ -15,7 +16,7 @@ namespace WiPro.Domain.Interfaces
         Task<IEnumerable<Filme>> GetFilmes();
         Task<Locacao> GetLocacao(Guid id);
         Task<IEnumerable<Locacao>> GetLocacao();
-        Task<Locacao> PostLocacao(Locacao locacao);
+        Task<Locacao> PostLocacao(LocacaoDTO locacaoDTO);
         Task<Cliente> InsertCliente(Cliente cliente);
     }
 }

@@ -87,6 +87,7 @@ namespace WiPro.Data.Repository
 
                     if (filme == null) throw new Exception("Filme não cadastrado");
 
+                    filme.Disponivel = false;
                     filmes.Add(filme);
                 }
 

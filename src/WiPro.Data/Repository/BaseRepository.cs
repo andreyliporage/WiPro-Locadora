@@ -57,38 +57,21 @@ namespace WiPro.Data.Repository
 
         public async Task<Locacao> GetLocacao(Guid id)
         {
-            IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filmes);
+            IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filme);
 
             return await query.AsNoTracking().FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<Locacao>> GetLocacao()
         {
-            IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filmes);
+            IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filme);
 
             return await query.AsNoTracking().ToListAsync();
         }
 
         public async Task<Locacao> PostLocacao(Locacao locacao)
         {
-            var filmeIndisponivelList = new List<Filme>();
-
-            for (int i = 0; i < locacao.Filmes.Count(); i++)
-            {
-                var filmes = locacao.Filmes.ToList();
-                var filme = await _context.Filmes.AsNoTracking().FirstOrDefaultAsync(f => f.Id == filmes[i].Id);
-
-                if (!filme.Disponivel)
-                {
-                    throw new Exception($"O filme {filme.Nome} não está disponível");
-                }
-            }
-
-            _context.Add(locacao);
-
-            await _context.SaveChangesAsync();
-
-            return locacao;
+            return null;
         }
 
         public async Task<T> InsertAsync(T entity)

@@ -8,7 +8,6 @@ namespace WiPro.Domain.Entities
     {
         public Locacao()
         {
-            Filmes = new HashSet<Filme>();
             DiaLocao = DateTime.UtcNow;
             Devolucao = DiaLocao.AddDays(3);
         }
@@ -17,7 +16,7 @@ namespace WiPro.Domain.Entities
 
         [JsonIgnore]
         public Cliente Cliente { get; set; }
-        public IEnumerable<Filme> Filmes { get; set; }
+        public Filme Filme { get; set; }
         public DateTime DiaLocao { get; set; }
         public DateTime Devolucao { get; set; }
     }

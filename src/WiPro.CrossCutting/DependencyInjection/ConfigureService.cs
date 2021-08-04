@@ -10,6 +10,7 @@ namespace WiPro.CrossCutting.DependencyInjection
         {
             serviceCollection.AddTransient<IClienteService, ClienteService>();
             serviceCollection.AddTransient<IFilmeService, FilmeService>();
+            serviceCollection.AddTransient<ILocacaoService, LocacaoService>();
         }
     }
 }

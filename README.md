@@ -11,9 +11,9 @@ A API permite cadastrar um filme, listar filmes, cadastrar cliente, listar clien
 ## Métodos disponíveis:
 
 ### Criar usuário
-Método: `POST`
-Endpoint: `localhost:5001/api/clientes`
-Retorno: `Retorna o objeto criado`
+Método: `POST` <br>
+Endpoint: `localhost:5001/api/clientes` <br>
+Retorno: `Retorna o objeto criado` <br>
 JSON:
 ```json
 {
@@ -24,9 +24,9 @@ JSON:
 ---
 
 ### Listar usuário
-Método: `GET`
-Endpoint: `localhost:5001/api/clientes`
-Retorno: `Retorna uma listagem com todos os usuários`
+Método: `GET` <br>
+Endpoint: `localhost:5001/api/clientes` <br>
+Retorno: `Retorna uma listagem com todos os usuários` <br>
 JSON:
 ```json
 [
@@ -56,9 +56,9 @@ JSON:
 ---
 
 ### Criar filme
-Método: `POST`
-Endpoint: `localhost:5001/api/filmes/`
-Retorno: `Retorna o objeto criado`
+Método: `POST` <br>
+Endpoint: `localhost:5001/api/filmes/` <br>
+Retorno: `Retorna o objeto criado` <br>
 JSON:
 ```json
 {
@@ -73,9 +73,9 @@ JSON:
 ---
 
 ### Listar filmes
-Método: `GET`
-Endpoint: `localhost:5001/api/filmes/`
-Retorno: `Retorna uma listagem com todos os filmes`
+Método: `GET` <br>
+Endpoint: `localhost:5001/api/filmes/` <br>
+Retorno: `Retorna uma listagem com todos os filmes` <br>
 JSON:
 ```json
 [
@@ -99,9 +99,9 @@ JSON:
 ---
 
 ### Criar locação
-Método: `POST`
-Enpoint: `localhost:5001/api/locacoes/`
-Retorno: `Retorna o objeto criado`
+Método: `POST` <br>
+Enpoint: `localhost:5001/api/locacoes/` <br>
+Retorno: `Retorna o objeto criado` <br>
 JSON:
 ```json
 {
@@ -123,9 +123,9 @@ JSON:
 ---
 
 ### Listar locações
-Método: `GET`
-Enpoint: `localhost:5001/api/locacoes/`
-Retorno: `Retorna uma listagem com todas as locações`
+Método: `GET` <br>
+Enpoint: `localhost:5001/api/locacoes/` <br>
+Retorno: `Retorna uma listagem com todas as locações` <br>
 JSON:
 ```json
 [
@@ -164,7 +164,7 @@ JSON:
 ---
 
 ### Devolução de filmes
-Método: `PUT`
-Enpoint: `localhost:5001/api/locacoes?idCliente`
-QueryParams: `Id do cliente`
+Método: `PUT` <br>
+Enpoint: `localhost:5001/api/locacoes?idCliente` <br>
+QueryParams: `Id do cliente` <br>
 Retorno: `204 NO CONTENT`

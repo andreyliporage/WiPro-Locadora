@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WiPro.Domain.DTOs;
 using WiPro.Domain.Entities;
+using WiPro.Domain.Entities.DTOs;
 
 namespace WiPro.Domain.Interfaces
 {

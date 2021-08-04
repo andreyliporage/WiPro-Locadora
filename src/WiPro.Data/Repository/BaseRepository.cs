@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WiPro.Data.Context;
-using WiPro.Domain.DTOs;
 using WiPro.Domain.Entities;
+using WiPro.Domain.Entities.DTOs;
 using WiPro.Domain.Interfaces;
 
 namespace WiPro.Data.Repository

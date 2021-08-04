@@ -2,8 +2,8 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WiPro.Domain.DTOs;
 using WiPro.Domain.Entities;
+using WiPro.Domain.Entities.DTOs;
 using WiPro.Domain.Interfaces;
 
 namespace WiPro.Api.Controllers

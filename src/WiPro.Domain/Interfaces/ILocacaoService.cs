@@ -11,5 +11,6 @@ namespace WiPro.Domain.Interfaces
         Task<Locacao> Get(Guid id);
         Task<IEnumerable<Locacao>> GetAll();
         Task<Locacao> Post(LocacaoDTO locacaoDTO);
+        Task<Locacao> Put(Guid idCliente);
     }
 }

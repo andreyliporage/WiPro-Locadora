@@ -92,7 +92,6 @@ namespace WiPro.Data.Repository
                     filmes.Add(filme);
                 }
 
-
                 locacao.Id = Guid.NewGuid();
                 locacao.Cliente = cliente;
                 locacao.ClienteId = cliente.Id;

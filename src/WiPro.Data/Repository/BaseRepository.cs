@@ -62,6 +62,13 @@ namespace WiPro.Data.Repository
             return await query.FirstOrDefaultAsync();
         }
 
+        public async Task<IEnumerable<Locacao>> GetLocacao()
+        {
+            IQueryable<Locacao> query = _context.Locacoes.Include(l => l.Cliente).Include(l => l.Filmes);
+
+            return await query.ToListAsync();
+        }
+
         public async Task<Locacao> PostLocacao(Locacao locacao)
         {
             var filmeIndisponivelList = new List<Filme>();

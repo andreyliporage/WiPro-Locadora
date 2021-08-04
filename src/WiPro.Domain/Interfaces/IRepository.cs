@@ -14,6 +14,7 @@ namespace WiPro.Domain.Interfaces
         Task<Filme> GetFilme(Guid id);
         Task<IEnumerable<Filme>> GetFilmes();
         Task<Locacao> GetLocacao(Guid id);
+        Task<IEnumerable<Locacao>> GetLocacao();
         Task<Locacao> PostLocacao(Locacao locacao);
         Task<Cliente> InsertCliente(Cliente cliente);
     }

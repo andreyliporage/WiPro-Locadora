@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WiPro.Domain.Entities;
 using WiPro.Domain.Interfaces;
 
 namespace WiPro.Api.Controllers
@@ -16,7 +17,7 @@ namespace WiPro.Api.Controllers
             _service = service;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetLocacaoWithId")]
         public async Task<ActionResult> Get(Guid id)
         {
             return Ok(await _service.Get(id));
@@ -26,6 +27,13 @@ namespace WiPro.Api.Controllers
         public async Task<ActionResult> Get()
         {
             return Ok(await _service.GetAll());
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Post([FromBody] Locacao locacao)
+        {
+            var result = await _service.Post(locacao);
+            return Created(new Uri(Url.Link("GetLocacaoWithId", new { id = result.Id })), result);
         }
     }
 }

@@ -70,6 +70,27 @@ namespace WiPro.Data.Repository
             return await query.AsNoTracking().ToListAsync();
         }
 
+        public async Task<Locacao> PutLocacao(Guid idCliente)
+        {
+
+            var cliente = GetCliente(idCliente).Result;
+            if (cliente == null) throw new Exception("Cliente não cadastrado");
+
+            var locacao = GetLocacao(cliente.LocacaoId).Result;
+            var filmes = locacao.Filmes.ToList();
+
+            filmes.ForEach(f => f.Disponivel = true);
+
+            var hoje = DateTime.UtcNow;
+            var comparacaoHojeEDataEntrega = DateTime.Compare(hoje, cliente.Locacao.Devolucao);
+            if (comparacaoHojeEDataEntrega > 0) throw new Exception($"A entrega deveria ser em {hoje.ToString("dd/MM/yyyy")}");
+
+            _context.Entry(locacao).CurrentValues.SetValues(locacao);
+            await _context.SaveChangesAsync();
+
+            return locacao;
+        }
+
         public async Task<Locacao> PostLocacao(LocacaoDTO locacaoDTO)
         {
             var locacao = new Locacao();

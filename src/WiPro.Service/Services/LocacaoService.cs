@@ -30,5 +30,10 @@ namespace WiPro.Service.Services
         {
             return await _repository.PostLocacao(locacaoDTO);
         }
+
+        public async Task<Locacao> Put(Guid idCliente)
+        {
+            return await _repository.PutLocacao(idCliente);
+        }
     }
 }

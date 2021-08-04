@@ -44,5 +44,20 @@ namespace WiPro.Api.Controllers
                 return StatusCode((int)HttpStatusCode.BadRequest, e.Message);
             }
         }
+
+        [HttpPut]
+        public async Task<ActionResult> Put([FromQuery] Guid idCliente)
+        {
+            try
+            {
+                var result = await _service.Put(idCliente);
+                if (result != null) return NoContent();
+                else throw new Exception("Locação não encontrada");
+            }
+            catch (Exception e)
+            {
+                return StatusCode((int)HttpStatusCode.BadRequest, e.Message);
+            }
+        }
     }
 }

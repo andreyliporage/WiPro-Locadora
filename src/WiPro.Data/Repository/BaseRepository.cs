@@ -37,7 +37,7 @@ namespace WiPro.Data.Repository
 
         public async Task<IEnumerable<Cliente>> GetClientes()
         {
-            IQueryable<Cliente> query = _context.Clientes.Include(c => c.Locacao);
+            IQueryable<Cliente> query = _context.Clientes.Include(c => c.Locacao).ThenInclude(l => l.Filmes);
 
             return await query.AsNoTracking().ToListAsync();
         }

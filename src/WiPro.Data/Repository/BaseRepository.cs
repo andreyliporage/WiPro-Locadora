@@ -62,6 +62,26 @@ namespace WiPro.Data.Repository
             return await query.FirstOrDefaultAsync();
         }
 
+        public async Task<Locacao> PostLocacao(Locacao locacao)
+        {
+            var filmeIndisponivelList = new List<Filme>();
+
+            for (int i = 0; i < locacao.Filmes.Count(); i++)
+            {
+                if (!FilmeDisponivel(locacao.Filmes.ElementAt(i)))
+                {
+                    filmeIndisponivelList.Add(locacao.Filmes.ElementAt(i));
+                    locacao.Filmes.ToList().Remove(locacao.Filmes.ElementAt(i));
+                }
+            }
+
+            _context.Add(locacao);
+
+            await _context.SaveChangesAsync();
+
+            return locacao;
+        }
+
         public async Task<T> InsertAsync(T entity)
         {
             try
@@ -104,6 +124,11 @@ namespace WiPro.Data.Repository
             }
 
             return cliente;
+        }
+
+        private bool FilmeDisponivel(Filme filme)
+        {
+            return filme.Disponivel;
         }
     }
 }

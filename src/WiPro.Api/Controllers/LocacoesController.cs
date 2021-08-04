@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WiPro.Domain.Entities;
@@ -32,8 +33,15 @@ namespace WiPro.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] Locacao locacao)
         {
-            var result = await _service.Post(locacao);
-            return Created(new Uri(Url.Link("GetLocacaoWithId", new { id = result.Id })), result);
+            try
+            {
+                var result = await _service.Post(locacao);
+                return Created(new Uri(Url.Link("GetLocacaoWithId", new { id = result.Id })), result);
+            }
+            catch (Exception e)
+            {
+                return StatusCode((int)HttpStatusCode.BadRequest, e.Message);
+            }
         }
     }
 }

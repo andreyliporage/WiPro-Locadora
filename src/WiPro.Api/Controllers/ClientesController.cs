@@ -18,7 +18,7 @@ namespace WiPro.Api.Controllers
             _service = service;
         }
 
-        [HttpGet("{id}", Name = "GetWithId")]
+        [HttpGet("{id}", Name = "GetClienteWithId")]
         public async Task<ActionResult> Get(Guid id)
         {
             return Ok(await _service.Get(id));
@@ -36,11 +36,11 @@ namespace WiPro.Api.Controllers
             try
             {
                 var result = await _service.Post(cliente);
-                return Created(new Uri(Url.Link("GetWithId", new { id = result.Id })), result);
+                return Created(new Uri(Url.Link("GetClienteWithId", new { id = result.Id })), result);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode((int)HttpStatusCode.BadRequest, "Cliente já cadastrado");
+                return StatusCode((int)HttpStatusCode.BadRequest, e.Message);
             }
         }
     }

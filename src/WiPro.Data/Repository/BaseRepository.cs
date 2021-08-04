@@ -86,6 +86,7 @@ namespace WiPro.Data.Repository
                     var filme = await _context.Filmes.FirstOrDefaultAsync(f => f.Id == filmesIds[i]);
 
                     if (filme == null) throw new Exception("Filme não cadastrado");
+                    if (!filme.Disponivel) throw new Exception($"Filme {filme.Nome} não está disponível");
 
                     filme.Disponivel = false;
                     filmes.Add(filme);
